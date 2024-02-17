@@ -11,10 +11,10 @@ class Asiento:
                 self.color=x
 
 class Motor:
-    def __init__ (self,numeroCilindros,registro,tipo):
+    def __init__ (self,numeroCilindros,tipo,registro):
         self.numeroCilindros= numeroCilindros
-        self.registro= registro
         self.tipo= tipo
+        self.registro= registro
     
     def cambiarRegistro (self,registro):
         if type(registro) == int:
@@ -57,5 +57,4 @@ class Auto:
              aviso="Las piezas no son originales"
              
         return aviso
-                
-                
+    
