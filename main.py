@@ -21,13 +21,11 @@ class Motor:
             self.registro=registro 
     
     def asignarTipo (self,tipo):
-        if type(tipo)== str:
             if(tipo == "electrico" or tipo == "gasolina"):
                 self.tipo=tipo
 
 class Auto:
     cantidadCreados=None
-    acientos=0
     def __init__(self,modelo,precio,asientos,marca,motor,registro):
         self.modelo = modelo
         self.precio = precio
@@ -37,14 +35,15 @@ class Auto:
         self.registro = registro
         
     def cantidadAsientos(self):
+        acientos=0
         for i in self.asientos:
             if i != None:
-                acientos+=1
+                acientos=acientos+1
         return acientos 
     
     def verificarIntegridad (self):
         aviso="Auto original"
-        if self.registro==Motor.registro:
+        if self.registro==self.motor.registro:
              for i in self.asientos:
                 if i != None:
                     if i.registro != self.registro:
